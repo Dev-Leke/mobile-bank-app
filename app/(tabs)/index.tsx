@@ -1,91 +1,130 @@
-import { Image } from "expo-image";
-import { Alert, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-
-import ParallaxScrollView from "@/components/parallax-scroll-view";
+import React from "react";
+import {
+  Alert,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
-      headerImage={
-        <Image
-          source={require("@/assets/images/partial-react-logo.png")}
-          style={styles.reactLogo}
-        />
-      }
-    >
-      <View style={styles.page}>
-        <View style={styles.card}>
-          <Text style={styles.title}>Money Transfer</Text>
+    <ScrollView style={styles.container} contentContainerStyle={styles.page}>
+      <View style={styles.banner}>
+  <Text style={styles.bannerTop}>FIRST ORDER: GET ₦100 OFF</Text>
+  <Text style={styles.bannerTitle}>UNLOCK EXTRA FREE COUPONS!</Text>
 
-          <View style={styles.row}>
-            <View style={styles.item}>
-              <View style={styles.icon} />
-              <Text style={styles.label}>To Bank</Text>
-            </View>
+  <TouchableOpacity style={styles.bannerBtn} onPress={() => {}}>
+    <Text style={styles.bannerBtnText}>Get Now</Text>
+  </TouchableOpacity>
+</View>
+      <View style={styles.card}>
+        <Text style={styles.title}>Money Transfer</Text>
 
-            <View style={styles.item}>
-              <View style={styles.icon} />
-              <Text style={styles.label}>To PalmPay</Text>
-            </View>
+        <View style={styles.row}>
+          <View style={styles.item}>
+            <View style={styles.icon} />
+            <Text style={styles.label}>To Bank</Text>
+          </View>
 
-            <View style={styles.item}>
-              <View style={styles.icon} />
-              <Text style={styles.label}>Withdraw</Text>
-            </View>
+          <View style={styles.item}>
+            <View style={styles.icon} />
+            <Text style={styles.label}>To PalmPay</Text>
+          </View>
+
+          <View style={styles.item}>
+            <View style={styles.icon} />
+            <Text style={styles.label}>Withdraw</Text>
           </View>
         </View>
-        <View style={styles.card}>
-          <View style={styles.servicesHeader}>
-            <Text style={styles.title}>Services</Text>
-            <Text style={styles.more}>More ›</Text>
-          </View>
-
-          <View style={styles.grid}>
-            {[
-              "Airtime",
-              "Data",
-              "Electricity",
-              "Insurance",
-              "Loan",
-              "TV",
-              "Refer & Earn",
-              "ATM Card",
-              "CashBox",
-              "SmartEarn",
-              "WAEC",
-              "Transport",
-            ].map((name) => (
-              <View key={name} style={styles.gridItem}>
-                <View style={styles.serviceIcon} />
-                <Text style={styles.gridText}>{name}</Text>
-              </View>
-            ))}
-          </View>
-        </View>
-        <TouchableOpacity
-          style={styles.alertBtn}
-          onPress={() => Alert.alert("Alert Button pressed")}
-        >
-          <Text style={styles.alertText}>Alert</Text>
-        </TouchableOpacity>
       </View>
-    </ParallaxScrollView>
+
+      <View style={styles.card}>
+        <View style={styles.servicesHeader}>
+          <Text style={styles.title}>Services</Text>
+          <Text style={styles.more}>More ›</Text>
+        </View>
+
+        <View style={styles.grid}>
+          {[
+            "Airtime",
+            "Data",
+            "Electricity",
+            "Insurance",
+            "Loan",
+            "TV",
+            "Refer & Earn",
+            "ATM Card",
+            "CashBox",
+            "SmartEarn",
+            "WAEC",
+            "Transport",
+          ].map((name) => (
+            <View key={name} style={styles.gridItem}>
+              <View style={styles.serviceIcon} />
+              <Text style={styles.gridText}>{name}</Text>
+            </View>
+          ))}
+        </View>
+      </View>
+
+      <TouchableOpacity
+        style={styles.alertBtn}
+        onPress={() => Alert.alert("Alert Button pressed")}
+      >
+        <Text style={styles.alertText}>Alert</Text>
+      </TouchableOpacity>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: "absolute",
-  },
-
-  page: {
-    paddingBottom: 24,
+  container: {
+    flex: 1,
     backgroundColor: "#F4F5F7",
+  },
+  banner: {
+  marginHorizontal: 16,
+  marginTop: 16,
+  borderRadius: 16,
+  padding: 16,
+  backgroundColor: "#6C1EFF", // purple like reference
+},
+
+bannerTop: {
+  alignSelf: "flex-start",
+  paddingHorizontal: 10,
+  paddingVertical: 6,
+  borderRadius: 10,
+  backgroundColor: "#FFD44D", // yellow tag
+  fontWeight: "700",
+  fontSize: 12,
+},
+
+bannerTitle: {
+  marginTop: 14,
+  fontSize: 22,
+  fontWeight: "800",
+  color: "#FFFFFF",
+},
+
+bannerBtn: {
+  marginTop: 14,
+  alignSelf: "flex-start",
+  backgroundColor: "#FFD44D",
+  paddingHorizontal: 18,
+  paddingVertical: 10,
+  borderRadius: 14,
+},
+
+bannerBtnText: {
+  fontWeight: "800",
+  color: "#3A1A8A",
+},
+  page: {
+    paddingTop: 16,
+    paddingBottom: 120,
   },
 
   card: {
