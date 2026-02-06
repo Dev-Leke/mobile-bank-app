@@ -1,17 +1,23 @@
+import React from "react";
+import {
+  Alert,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+
 import AntDesign from "@expo/vector-icons/AntDesign";
-import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Fontisto from "@expo/vector-icons/Fontisto";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import React from "react";
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      {/* Top Header */}
+      {/* Top Header (Abimbola) */}
       <View style={styles.topNav}>
         <View style={styles.topLeft}>
           <Ionicons name="person" size={24} color="black" />
@@ -27,144 +33,70 @@ export default function HomeScreen() {
         </View>
       </View>
 
-      {/* Scrollable Content */}
-      <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-        {/* Promo Banner (placeholder image) */}
-        <View style={styles.bannerWrap}>
-          <View style={styles.banner}>
-            <View style={styles.bannerTag}>
-              <Text style={styles.bannerTagText}>FIRST ORDER: GET ₦100 OFF</Text>
-            </View>
-
-            <Text style={styles.bannerTitle}>UNLOCK EXTRA FREE{"\n"}COUPONS!</Text>
-
-            <View style={styles.bannerBtn}>
-              <Text style={styles.bannerBtnText}>Get Now</Text>
-            </View>
-
-            <View style={styles.bannerBadge}>
-              <Text style={styles.bannerBadgeSmall}>UP TO</Text>
-              <Text style={styles.bannerBadgeBig}>₦5,450</Text>
-            </View>
-          </View>
-        </View>
-
-        {/* Money Transfer */}
+      {/* Scrollable content */}
+      <ScrollView contentContainerStyle={styles.scrollContent}>
+        {/* Money Transfer (your work) */}
         <View style={styles.card}>
-          <Text style={styles.sectionTitle}>Money Transfer</Text>
+          <Text style={styles.title}>Money Transfer</Text>
 
-          <View style={styles.transferRow}>
-            <View style={styles.transferItem}>
-              <View style={styles.transferIcon}>
-                <Ionicons name="business" size={26} color="#6C1EFF" />
-              </View>
-              <Text style={styles.transferLabel}>To Bank</Text>
+          <View style={styles.row}>
+            <View style={styles.item}>
+              <View style={styles.icon} />
+              <Text style={styles.label}>To Bank</Text>
             </View>
 
-            <View style={styles.transferItem}>
-              <View style={styles.transferIcon}>
-                <Ionicons name="person" size={26} color="#6C1EFF" />
-              </View>
-              <Text style={styles.transferLabel}>To PalmPay</Text>
+            <View style={styles.item}>
+              <View style={styles.icon} />
+              <Text style={styles.label}>To PalmPay</Text>
             </View>
 
-            <View style={styles.transferItem}>
-              <View style={styles.transferIcon}>
-                <MaterialCommunityIcons name="cash-fast" size={26} color="#6C1EFF" />
-              </View>
-              <Text style={styles.transferLabel}>Withdraw</Text>
+            <View style={styles.item}>
+              <View style={styles.icon} />
+              <Text style={styles.label}>Withdraw</Text>
             </View>
           </View>
         </View>
 
-        {/* Services (LEKE'S SECTION - kept) */}
-        <View style={styles.servicesSection}>
+        {/* Services (your work) */}
+        <View style={styles.card}>
           <View style={styles.servicesHeader}>
-            <Text style={styles.servicesHeaderText}>Services</Text>
-            <View style={styles.more}>
-              <Text style={styles.moreText}>More</Text>
-              <FontAwesome5 name="angle-right" size={18} color="#555" />
-            </View>
+            <Text style={styles.title}>Services</Text>
+            <Text style={styles.moreText}>More ›</Text>
           </View>
 
-          <View style={styles.serviceItems}>
-            <View style={[styles.item, styles.promo]}>
-              <Ionicons style={{ color: "#497ee8" }} name="call" size={28} />
-              <Text style={styles.itemText}>Airtime</Text>
-              <Text style={styles.promoBanner}>FREE</Text>
-            </View>
-
-            <View style={styles.item}>
-              <Ionicons style={{ color: "#167432" }} name="server" size={28} />
-              <Text style={styles.itemText}>Data</Text>
-            </View>
-
-            <View style={styles.item}>
-              <Ionicons style={{ color: "#167432" }} name="flash" size={28} />
-              <Text style={styles.itemText}>Electricity</Text>
-            </View>
-
-            <View style={styles.item}>
-              <Ionicons style={{ color: "#497ee8" }} name="shield" size={28} />
-              <Text style={styles.itemText}>Insurance</Text>
-            </View>
-
-            <View style={styles.item}>
-              <Ionicons style={{ color: "#167432" }} name="business" size={28} />
-              <Text style={styles.itemText}>Loan</Text>
-            </View>
-
-            <View style={styles.item}>
-              <Ionicons style={{ color: "#497ee8" }} name="tv" size={28} />
-              <Text style={styles.itemText}>TV</Text>
-            </View>
-
-            <View style={styles.item}>
-              <Ionicons style={{ color: "#4d1c72" }} name="person" size={28} />
-              <Text style={styles.itemText}>Refer & Earn</Text>
-            </View>
-
-            <View style={[styles.item, styles.promo]}>
-              <Ionicons style={{ color: "#4d1c72" }} name="card-sharp" size={28} />
-              <Text style={styles.itemText}>ATM card</Text>
-              <Text style={styles.promoBanner}>FREE</Text>
-            </View>
-
-            <View style={[styles.item, styles.promo]}>
-              <Ionicons style={{ color: "#4d1c72" }} name="cash" size={28} />
-              <Text style={styles.itemText}>Cashbox</Text>
-              <Text style={styles.promoBanner}>Payable</Text>
-            </View>
-
-            <View style={styles.item}>
-              <Ionicons style={{ color: "#4d1c72" }} name="wallet" size={28} />
-              <Text style={styles.itemText}>SmartEarn</Text>
-            </View>
-
-            <View style={styles.item}>
-              <Ionicons style={{ color: "#4d1c72" }} name="stats-chart" size={28} />
-              <Text style={styles.itemText}>WAEC</Text>
-            </View>
-
-            <View style={styles.item}>
-              <Ionicons style={{ color: "#497ee8" }} name="bag" size={28} />
-              <Text style={styles.itemText}>Transport</Text>
-            </View>
-          </View>
-
-          <View style={styles.dots}>
-            <View style={styles.dotActive} />
-            <View style={styles.dot} />
+          <View style={styles.grid}>
+            {[
+              "Airtime",
+              "Data",
+              "Electricity",
+              "Insurance",
+              "Loan",
+              "TV",
+              "Refer & Earn",
+              "ATM Card",
+              "CashBox",
+              "SmartEarn",
+              "WAEC",
+              "Transport",
+            ].map((name) => (
+              <View key={name} style={styles.gridItem}>
+                <View style={styles.serviceIcon} />
+                <Text style={styles.gridText}>{name}</Text>
+              </View>
+            ))}
           </View>
         </View>
 
-        {/* Alert Button */}
-        <TouchableOpacity style={styles.alertBtn} onPress={() => alert("Alert Button pressed")}>
+        {/* Alert button (your work) */}
+        <TouchableOpacity
+          style={styles.alertBtn}
+          onPress={() => Alert.alert("Alert Button pressed")}
+        >
           <Text style={styles.alertText}>Alert</Text>
         </TouchableOpacity>
       </ScrollView>
 
-      {/* Bottom Navigation (LEKE'S FOOTER - kept) */}
+      {/* Bottom Navigation (footer) */}
       <View style={styles.bottomNav}>
         <View style={styles.tabItem}>
           <Ionicons name="home-sharp" size={24} color="#1b0a73" />
@@ -196,11 +128,13 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#e2e0e0" },
+  container: {
+    flex: 1,
+    backgroundColor: "#F4F5F7",
+  },
 
   scrollContent: {
-    paddingHorizontal: 10,
-    paddingBottom: 110, // space for bottom nav
+    paddingBottom: 90, // space for bottom nav
   },
 
   topNav: {
@@ -213,10 +147,119 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "#eee",
   },
-  topLeft: { flexDirection: "row", alignItems: "center", gap: 10 },
-  topRight: { flexDirection: "row", alignItems: "center", gap: 14 },
-  topTitle: { fontWeight: "700" },
-  topSub: { color: "#777", fontSize: 12 },
+
+  topLeft: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+  },
+
+  topRight: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 14,
+  },
+
+  topTitle: {
+    fontWeight: "700",
+  },
+
+  topSub: {
+    color: "#777",
+    fontSize: 12,
+  },
+
+  card: {
+    backgroundColor: "#fff",
+    marginHorizontal: 16,
+    marginTop: 16,
+    borderRadius: 16,
+    padding: 16,
+  },
+
+  title: {
+    fontSize: 22,
+    fontWeight: "700",
+    color: "#111",
+  },
+
+  row: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 18,
+  },
+
+  item: {
+    alignItems: "center",
+    flex: 1,
+  },
+
+  icon: {
+    width: 52,
+    height: 52,
+    borderRadius: 14,
+    backgroundColor: "#EEE6FF",
+    marginBottom: 8,
+  },
+
+  label: {
+    fontSize: 12,
+    color: "#222",
+  },
+
+  servicesHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+
+  moreText: {
+    color: "#9AA0A6",
+    fontSize: 13,
+    fontWeight: "500",
+  },
+
+  grid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    marginTop: 18,
+  },
+
+  gridItem: {
+    width: "25%",
+    alignItems: "center",
+    marginBottom: 18,
+  },
+
+  serviceIcon: {
+    width: 46,
+    height: 46,
+    borderRadius: 14,
+    backgroundColor: "#EEE6FF",
+    marginBottom: 6,
+  },
+
+  gridText: {
+    fontSize: 11,
+    textAlign: "center",
+    color: "#222",
+  },
+
+  alertBtn: {
+    marginHorizontal: 16,
+    marginTop: 16,
+    marginBottom: 16,
+    backgroundColor: "#6C1EFF",
+    paddingVertical: 14,
+    borderRadius: 12,
+    alignItems: "center",
+  },
+
+  alertText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "700",
+  },
 
   bottomNav: {
     height: 70,
@@ -227,112 +270,22 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: "#eee",
   },
-  tabItem: { alignItems: "center", justifyContent: "center" },
-  tabLabel: { fontSize: 12, color: "#999", marginTop: 4 },
-  tabLabelActive: { fontSize: 12, color: "#1b0a73", marginTop: 4, fontWeight: "700" },
 
-  /* Banner */
-  bannerWrap: { marginTop: 12 },
-  banner: {
-    height: 150,
-    borderRadius: 12,
-    backgroundColor: "#6C1EFF",
-    padding: 12,
-    overflow: "hidden",
-  },
-  bannerTag: {
-    alignSelf: "flex-start",
-    backgroundColor: "#FFC400",
-    paddingHorizontal: 10,
-    paddingVertical: 4,
-    borderRadius: 6,
-    marginBottom: 10,
-  },
-  bannerTagText: { fontWeight: "800", fontSize: 11, color: "#2b2b2b" },
-  bannerTitle: { color: "#fff", fontWeight: "900", fontSize: 22, lineHeight: 24 },
-  bannerBtn: {
-    marginTop: 10,
-    backgroundColor: "#FFC400",
-    alignSelf: "flex-start",
-    paddingHorizontal: 18,
-    paddingVertical: 10,
-    borderRadius: 20,
-  },
-  bannerBtnText: { fontWeight: "900", color: "#2b2b2b" },
-  bannerBadge: {
-    position: "absolute",
-    right: 14,
-    bottom: 14,
-    backgroundColor: "rgba(255,255,255,0.18)",
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.25)",
-    paddingHorizontal: 12,
-    paddingVertical: 10,
-    borderRadius: 12,
-  },
-  bannerBadgeSmall: { color: "#fff", fontWeight: "800", fontSize: 10, textAlign: "center" },
-  bannerBadgeBig: { color: "#fff", fontWeight: "900", fontSize: 20 },
-
-  /* Money Transfer */
-  card: {
-    backgroundColor: "#fff",
-    borderRadius: 12,
-    padding: 14,
-    marginTop: 12,
-  },
-  sectionTitle: { fontWeight: "800", fontSize: 20, marginBottom: 10 },
-  transferRow: { flexDirection: "row", justifyContent: "space-between", marginTop: 6 },
-  transferItem: { alignItems: "center", width: "33%" },
-  transferIcon: {
-    width: 56,
-    height: 56,
-    borderRadius: 16,
-    backgroundColor: "#EEE6FF",
+  tabItem: {
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: 8,
-  },
-  transferLabel: { fontSize: 12, color: "#222" },
-
-  /* Services */
-  servicesSection: {
-    backgroundColor: "#fff",
-    borderRadius: 10,
-    padding: 10,
-    marginTop: 12,
-  },
-  servicesHeader: { flexDirection: "row", justifyContent: "space-between", marginBottom: 10, alignItems: "center" },
-  servicesHeaderText: { fontWeight: "600", fontSize: 18 },
-  more: { flexDirection: "row", alignItems: "center", gap: 6 },
-  moreText: { color: "#777" },
-  serviceItems: { flexDirection: "row", flexWrap: "wrap" },
-  item: { width: "25%", alignItems: "center", justifyContent: "center", paddingVertical: 16, gap: 10 },
-  itemText: { fontWeight: "700", fontSize: 12 },
-  promo: { position: "relative" },
-  promoBanner: {
-    position: "absolute",
-    backgroundColor: "orangered",
-    top: 6,
-    right: 6,
-    color: "#fff",
-    paddingHorizontal: 4,
-    paddingVertical: 2,
-    fontSize: 8,
-    borderRadius: 4,
-    overflow: "hidden",
   },
 
-  dots: { flexDirection: "row", justifyContent: "center", gap: 6, marginTop: 6, marginBottom: 4 },
-  dotActive: { height: 4, width: 20, backgroundColor: "#4d1c72", borderRadius: 999 },
-  dot: { height: 4, width: 20, backgroundColor: "#ccc", borderRadius: 999 },
-
-  /* Alert */
-  alertBtn: {
-    marginTop: 14,
-    backgroundColor: "#6C1EFF",
-    paddingVertical: 14,
-    borderRadius: 12,
-    alignItems: "center",
+  tabLabel: {
+    fontSize: 12,
+    color: "#999",
+    marginTop: 4,
   },
-  alertText: { color: "#fff", fontSize: 16, fontWeight: "800" },
+
+  tabLabelActive: {
+    fontSize: 12,
+    color: "#1b0a73",
+    marginTop: 4,
+    fontWeight: "700",
+  },
 });
